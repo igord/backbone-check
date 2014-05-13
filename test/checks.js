@@ -5,11 +5,13 @@ QUnit.testStart(function( details ) {
 
 module( 'Checks' );
 test('num', function() {
-    expect( 4 );
-    equal( false, c(2.34, 1), 'false, (2.34, 1)' );
+    expect( 6 );
+    equal( false, c(2.34, 1), 'false, (2.34, 1), more then 1 decimal' );
+    equal( false, c(2.3, 2), 'false, (2.3, 2), less then 2 decimal' );
     equal( true, c(2, 1), '(2, 1)' );
     equal( true, c(-345342.10000, 1), '(-345342.10, 1)' );
     equal( true, c(-4, 0), '(-4, 0)' );
+    equal( false, c("string"), 'false, ("string")' );
 });
 test('min', function() {
     expect( 4 );
@@ -34,10 +36,10 @@ test('range', function() {
 });
 test('length', function() {
     expect( 4 );
-    equal( false, c({a:3}, 2, 6), 'false, has no length prop' );
-    equal( true, c({a:3, length:2}, 0, 6), 'has length' );
+    equal( false, c({a:3}, 2, 6), 'false, {a:3} has no length prop' );
+    equal( true, c({a:3, length:2}, 0, 6), '{a:3, length:2} has length and it is >0 and <6' );
     equal( false, c("string", -1, 1), 'false, string, -1, 1' );
-    equal( true, c([0, 1, 2], 2, 6), 'array(3), 2, 6' );
+    equal( true, c([0, 1, 2], 2, 6), '[0, 1, 2], 2, 6' );
 });
 test('is', function() {
     expect( 4 );

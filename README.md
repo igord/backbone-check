@@ -38,7 +38,7 @@ var Example = Backbone.Model.extend({
 });
 
 var example = new Example();
-// enable checking whenever property of model is changed
+// enable checking whenever property of instance is changed
 Backbone.check.change(example);
 ```
 ## Check(validation) functions

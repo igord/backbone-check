@@ -124,7 +124,6 @@
 			    });
 			}
 			o.checks[k][colon[0]] = JSON.parse("[" + args + "]");
-			console.log(o.checks[k][colon[0]]);
 		    } else {
 			o.checks[k][colon[0]] = null;
 		    }

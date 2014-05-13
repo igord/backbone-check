@@ -1,7 +1,12 @@
 backbone-check
 =========
 
-[http://backbonejs.org/] (Backbone.js) plugin that checks(validates) model properties. Definition syntax is clean and easy to read. Nested models are supported.
+[Backbone.js] (http://backbonejs.org/) plugin that checks(validates) model properties. Definition syntax is clean and easy to read. Nested models are supported.
+
+Comparing to other Backbone validation plugins this one:
+- requires less typing
+- can validate values on change event
+- does only validation
 
 ## Example:
 
@@ -38,7 +43,7 @@ var Example = Backbone.Model.extend({
 });
 
 var example = new Example();
-// enable checking whenever property of model is changed
+// enable checking whenever property of instance is changed
 Backbone.check.change(example);
 ```
 ## Check(validation) functions
